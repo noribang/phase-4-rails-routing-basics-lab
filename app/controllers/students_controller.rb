@@ -14,4 +14,12 @@ class StudentsController < ApplicationController
         # View
         render json: students
     end
+
+    def highest_grade
+        # talk to Model
+        student = Student.order(grade: :desc).first
+        # create View
+        render json: student
+        # byebug
+    end
 end
